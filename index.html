@@ -28,7 +28,7 @@
     <header>
       <!-- place navbar here -->
 
-      <nav class="nav w-100 py-2 px-5 container-fluid position-relative py-3">
+      <nav class="nav w-100 py-2 px-5 container-fluid position-fixed py-3">
         <ul
           class="nav-list d-flex flex-row align-items-center justify-content-space-between my-2"
         >
@@ -40,7 +40,7 @@
             <div class="logo"></div>
           </li>
           <li
-            class="nav-items d-flex flex-row align-items-center gap-3 position-absolute end-0"
+            class="nav-items d-flex flex-row align-items-center gap-3 mx-3 position-absolute end-0"
           >
             <a href="#!" class="action-btn btn"> About </a
             ><a
@@ -51,6 +51,24 @@
           </li>
         </ul>
       </nav>
+
+      <script>
+        window.addEventListener("scroll", function () {
+          const nav = document.querySelector("nav");
+          const lis = document.querySelectorAll("nav li");
+          if (window.scrollY !== 0) {
+            nav.style.background = "var(--glass)";
+            lis.forEach((li) => {
+              li.classList.add("dark-text");
+            });
+          } else {
+            nav.style.background = "";
+            lis.forEach((li) => {
+              li.classList.remove("dark-text");
+            });
+          }
+        });
+      </script>
     </header>
     <main
       class="d-flex flex-row align-items-center justify-content-space-around gap-5 py-5"
@@ -89,14 +107,16 @@
               >Details</a
             >
           </div>
-          <div class="risk-info d-flex flex-column justify-content-center">
+          <div
+            class="risk-info d-flex flex-column justify-content-center position-relative"
+          >
             <span class="aqi-text-title aqi small">Risk</span>
             <span class="aqi-value aqi">0%</span>
             <span class="aqi-text aqi small">
               <span class="amplitude">No</span> risk due to weather conditions
             </span>
             <button
-              class="learn-more btn btn-warning rounded-pill d-flex flex-row align-items-center gap-3 my-2 px-5 py-2"
+              class="toggle-chatbot learn-more btn btn-warning rounded-pill d-flex flex-row align-items-center gap-3 mt-5 px-5 py-2"
             >
               <i class="bi bi-robot"></i>
               <span class="text">Learn more</span>
@@ -117,9 +137,103 @@
         </div>
       </div>
     </main>
+
+    <section class="forecast py-4 px-2 d-flex flex-row py-5 w-100">
+      <div class="info-container mx-5 w-100">
+        <h2 class="section-title">
+          Next 4 Days <span class="grey">Forecast</span>
+        </h2>
+
+        <ul
+          class="cards-container d-flex flex-row px-5 py-2 mt-5 align-items-center w-100 h-50 rounded-5"
+        >
+          <li class="card h-100 rounded-4 w-25 d-flex flex-column mx-5">
+            <img src="#" alt="#" class="illustrate h-50 w-100" />
+            <p
+              class="desc mx-auto d-flex flex-column justify-content-space-around"
+            >
+              <span class="value">0</span>
+              <span class="amplitude">Good</span>
+              <span class="date">02/01/2025 00:00</span>
+            </p>
+          </li>
+          <li class="card h-100 rounded-4 w-25 d-flex flex-column mx-5">
+            <img src="#" alt="#" class="illustrate h-50 w-100" />
+            <p
+              class="desc mx-auto d-flex flex-column justify-content-space-around"
+            >
+              <span class="value">0</span>
+              <span class="amplitude">Good</span>
+              <span class="date">02/01/2025 00:00</span>
+            </p>
+          </li>
+          <li class="card h-100 rounded-4 w-25 d-flex flex-column mx-5">
+            <img src="#" alt="#" class="illustrate h-50 w-100" />
+            <p
+              class="desc mx-auto d-flex flex-column justify-content-space-around"
+            >
+              <span class="value">0</span>
+              <span class="amplitude">Good</span>
+              <span class="date">02/01/2025 00:00</span>
+            </p>
+          </li>
+          <li class="card h-100 rounded-4 w-25 d-flex flex-column mx-5">
+            <img src="#" alt="#" class="illustrate h-50 w-100" />
+            <p
+              class="desc mx-auto d-flex flex-column justify-content-space-around"
+            >
+              <span class="value">0</span>
+              <span class="amplitude">Good</span>
+              <span class="date">02/01/2025 00:00</span>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <button
+      class="toggle-chatbot btn btn-warning px-3 py-3 mx-5 my-5 position-fixed bottom-0 end-0 rounded-circle"
+    >
+      <i class="bi bi-robot"></i>
+    </button>
+    <div
+      id="chatbot"
+      class="chatbot-container position-fixed bottom-0 end-0 m-4 rounded-4 shadow-lg bg-white"
+      style="width: 350px; max-height: 500px; z-index: 1050"
+    >
+      <div
+        class="chatbot-header d-flex align-items-center justify-content-between p-3 border-bottom"
+      >
+        <span class="fw-bold"><i class="bi bi-robot"></i> Windy</span>
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Close"
+          onclick="document.getElementById('chatbot').style.display='none';"
+        ></button>
+      </div>
+      <div class="chatbot-body p-3" style="overflow-y: auto; height: 300px">
+        <!-- Messages will appear here -->
+        <div class="chatbot-message bot mb-2">
+          <span>Hello! How can I help you today?</span>
+        </div>
+      </div>
+      <form class="chatbot-footer d-flex p-3 border-top">
+        <input
+          type="text"
+          id="chatbot-input"
+          class="form-control me-2"
+          placeholder="Type your message..."
+          autocomplete="off"
+        />
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+    </div>
+    <style></style>
     <footer>
       <!-- place footer here -->
     </footer>
+
+    <script src="./js/main.js" type="module"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

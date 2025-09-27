@@ -9,12 +9,14 @@
 
   --bg-pri: #1c1b2d;
   --bg-sec: #090e27;
+
+  --glass: #000000a9;
+  --white-glass: rgba(255, 255, 255, 0.61);
 }
 html {
   font-size: 62.5%;
 }
 body {
-  height: 100vh;
   width: 100vw;
   background: linear-gradient(
     315deg,
@@ -24,4 +26,62 @@ body {
   color: var(--white);
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
+}
+.chatbot-header span {
+  color: var(--black);
+}
+.chatbot-container {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+}
+.chatbot-message.bot span {
+  background: #f1f3f4;
+  border-radius: 12px;
+  padding: 8px 12px;
+  display: inline-block;
+  color: var(--black);
+}
+.chatbot-message.user span {
+  background: #0d6efd;
+  color: #fff;
+  border-radius: 12px;
+  padding: 8px 12px;
+  display: inline-block;
+}
+.chatbot-footer input {
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background: var(--white-glass);
+  color: var(--black);
+  font-size: 1.6rem;
+  font-family: inherit;
+  outline: none;
+  transition: background 0.2s;
+}
+
+.chatbot-footer input:focus {
+  background: #fff;
+  box-shadow: 0 0 0 2px var(--contrast-color);
+}
+.chatbot-footer button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: var(--contrast-color);
+  color: var(--black);
+  font-size: 1.6rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  margin-left: 8px;
+}
+
+.chatbot-footer button:hover,
+.chatbot-footer button:focus {
+  background: var(--secondary-color);
+  color: var(--white);
+}
+.toggle-chatbot {
+  font-size: 1.6rem;
 }
