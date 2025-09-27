@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Windy App</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+
+  <body class="container-fluid d-flex flex-column">
+    <header>
+      <!-- place navbar here -->
+
+      <nav class="nav w-100 py-2 px-5 container-fluid position-relative py-3">
+        <ul
+          class="nav-list d-flex flex-row align-items-center justify-content-space-between my-2"
+        >
+          <li class="nav-items d-flex flex-row align-items-center gap-3">
+            <a href="#!" class="bare link">Air Quality</a>
+            <a href="#!" class="bare link">Discover</a>
+          </li>
+          <li class="nav-items d-flex flex-row align-items-center gap-3">
+            <div class="logo"></div>
+          </li>
+          <li
+            class="nav-items d-flex flex-row align-items-center gap-3 position-absolute end-0"
+          >
+            <a href="#!" class="action-btn btn"> About </a
+            ><a
+              href="#!"
+              class="action-btn btn btn-light px-5 py-2 rounded-pill"
+              >Get started</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main
+      class="d-flex flex-row align-items-center justify-content-space-around gap-5 py-5"
+    >
+      <div class="info-container d-flex flex-column mx-5">
+        <h1 id="web-title">Air Quality <span class="grey">Index</span></h1>
+
+        <div class="local d-flex flex-column">
+          <span class="date-time">01/01/2025 00:00</span>
+          <span class="location"
+            >New York, NY <i class="bi bi-arrow-right"></i>
+            <span class="country"><i class="bi bi-us"></i> USA</span>
+          </span>
+        </div>
+
+        <!-- place main content here -->
+        <!-- statistics -->
+
+        <div
+          class="statistics d-flex flex-column justify-content-center rounded-4"
+        >
+          <h2 class="title">Main Statistics</h2>
+          <span class="aqi-text-title aqi grey small">AQI</span>
+          <span class="aqi-value aqi">0</span>
+          <span class="aqi-text">
+            <span class="amplitude">Good</span> : PM2.5 - Wind
+          </span>
+        </div>
+        <!-- risk -->
+        <div
+          class="risk-of-pollution d-flex flex-column justify-content-center rounded-4"
+        >
+          <div class="title-container d-flex flex-row align-items-center gap-3">
+            <h2 class="title">Risk of Pollution</h2>
+            <a href="#!" class="btn btn-warning px-5 py-2 rounded-pill"
+              >Details</a
+            >
+          </div>
+          <div class="risk-info d-flex flex-column justify-content-center">
+            <span class="aqi-text-title aqi small">Risk</span>
+            <span class="aqi-value aqi">0%</span>
+            <span class="aqi-text aqi small">
+              <span class="amplitude">No</span> risk due to weather conditions
+            </span>
+            <button
+              class="learn-more btn btn-warning rounded-pill d-flex flex-row align-items-center gap-3 my-2 px-5 py-2"
+            >
+              <i class="bi bi-robot"></i>
+              <span class="text">Learn more</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Map container moved inside info-container -->
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52135129.17428948!2d-119.8093025!3d44.24236485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2zSG9hIEvhu7M!5e1!3m2!1svi!2s!4v1758853300760!5m2!1svi!2s"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            class="map"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

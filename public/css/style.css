@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --primary-color: #241f3c;
+  --secondary-color: #1b2777;
+  --contrast-color: #f3a80a;
+  --white: #f2f4f7;
+  --black: #020205;
+  --grey: #aaaaaa;
+
+  --bg-pri: #1c1b2d;
+  --bg-sec: #090e27;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+    315deg,
+    var(--primary-color) 50%,
+    var(--secondary-color) 100%
+  );
+  color: var(--white);
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+}
