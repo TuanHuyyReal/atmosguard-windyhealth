@@ -49,9 +49,8 @@ document
     e.preventDefault();
     sendMessage();
   });
-document
-  .querySelector(".toggle-chatbot")
-  .addEventListener("click", function () {
+document.querySelectorAll(".toggle-chatbot").forEach((toggle) => {
+  toggle.addEventListener("click", function () {
     const chatbot = document.getElementById("chatbot");
     if (chatbot.style.display === "none" || !chatbot.style.display) {
       chatbot.style.display = "block";
@@ -59,5 +58,6 @@ document
       chatbot.style.display = "none";
     }
   });
+});
 // Initialize chatbot as hidden
 document.getElementById("chatbot").style.display = "none";
