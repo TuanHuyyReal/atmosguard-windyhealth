@@ -28,6 +28,9 @@ body {
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
 }
+.fs-16 {
+  font-size: 1.6rem;
+}
 .chatbot-header span {
   color: var(--black);
 }

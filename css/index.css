@@ -38,9 +38,10 @@ nav ul.nav-list {
       z-index: 0;
     }
 
-    a.action-btn.btn.btn-light {
+    button.action-btn.btn.btn-light {
       min-width: 150px;
       padding: 0.5rem 2rem !important;
+      font-size: 1.6rem;
     }
   }
   .logo-container {
