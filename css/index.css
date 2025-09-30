@@ -1,18 +1,23 @@
 nav {
   width: 100vw !important;
+  height: 10vh;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
   font-family: "Poppins", sans-serif;
-
   border-radius: 0 0 16px 16px;
 }
 
 nav ul.nav-list {
+  height: 100%;
   padding: 1rem 2rem;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between !important;
+  gap: 2rem;
   li {
+    width: calc((100% - 60%) / 2);
     font-size: 1.6rem !important;
     gap: 3rem !important;
     transition: all 0.3s linear;
@@ -24,26 +29,65 @@ nav ul.nav-list {
       font-family: "Poppins";
       font-weight: 500;
     }
-    ::after {
-      content: "";
-      display: block;
-      width: 0%;
-      border-bottom: 1px solid var(--white);
-      margin: 0 auto;
-      transition: all 0.3s linear;
-    }
-    :hover::after {
-      width: 100%;
-    }
-    :hover {
-      color: var(--white);
-    }
+
     .btn-light {
       color: var(--black);
     }
+    img#logo {
+      width: 20%;
+      z-index: 0;
+    }
+
+    a.action-btn.btn.btn-light {
+      min-width: 150px;
+      padding: 0.5rem 2rem !important;
+    }
+  }
+  .logo-container {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .dark-text {
     color: var(--primary-color) !important;
+  }
+
+  .search-bar {
+    position: absolute;
+    border-radius: 3rem;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    transition: all 0.3s linear;
+
+    width: 0;
+  }
+
+  .search-bar.active {
+    width: 100%;
+  }
+  .search-bar img {
+    position: relative;
+    width: 3rem;
+  }
+  .search-bar input[type="text"] {
+    height: 6rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    color: var(--primary-color);
+    background-color: transparent;
+    padding: 0 1rem;
+    position: relative;
+  }
+  .search-bar .remove {
+    color: var(--primary-color);
+    position: absolute;
+    width: 100%;
   }
 }
 main {
@@ -139,13 +183,21 @@ section.forecast {
     }
   }
   ul.cards-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
     li {
+      flex-wrap: wrap;
+      flex-basis: 300px;
+      flex-shrink: 600px;
+
       background: var(--secondary-color);
       border-radius: 16px;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(15px);
       -webkit-backdrop-filter: blur(15px);
-
       p.desc {
         width: 90%;
         font-family: "Poppins", sans-serif;
@@ -164,102 +216,142 @@ section.forecast {
   }
 }
 
-@media (max-width: 1200px) {
-  main {
+@media (max-width: 1024px) {
+  nav ul.nav-list.d-flex.flex-row {
+    height: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between !important;
     gap: 2rem;
-    .map {
-      width: 60%;
-      height: 60%;
-      right: 2%;
+
+    li a.action-btn {
+      padding: 0.5rem 1rem !important;
+      width: max-content !important;
     }
+    img {
+      width: 50%;
+    }
+  }
+  /* main {
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 2rem !important;
+    padding: 2rem 1rem !important;
+  } */
+  main.d-flex.flex-row {
+    flex-direction: column !important;
+  }
+
+  .info-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    order: 1;
+  }
+
+  .map-container {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 300px !important;
+    margin: 2rem 0 !important;
+    order: 3;
+  }
+
+  .map {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  nav ul.nav-list {
+    padding: 1rem !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+
+  nav ul.nav-list li {
+    font-size: 1.4rem !important;
+    gap: 1rem !important;
+  }
+
+  .info-container #web-title {
+    font-size: calc(2.5rem + 1vw) !important;
+    margin-top: 5vh !important;
+  }
+
+  .statistics,
+  .risk-of-pollution {
+    padding: 1.5rem 1rem !important;
+    margin: 1rem 0 !important;
   }
 }
 
-@media (max-width: 900px) {
-  nav ul.nav-list {
-    padding: 1rem 1rem;
-    li {
-      font-size: 1.2rem !important;
-      gap: 1.5rem !important;
-    }
-  }
+@media (max-width: 425px) {
   main {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-    .map {
-      position: static;
-      transform: none;
-      width: 100%;
-      height: 300px;
-      margin-top: 2rem;
-    }
-    .info-container {
-      #web-title {
-        margin-top: 4vh;
-        font-size: 2.2rem;
-      }
-    }
+    gap: 1.5rem !important;
+    padding: 1rem 0.5rem !important;
   }
-  section.forecast {
-    h2.section-title {
-      font-size: 2.2rem;
-      margin-top: 4vh;
-    }
-    ul.cards-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      li {
-        width: 100%;
-      }
-    }
-  }
-}
 
-@media (max-width: 600px) {
-  nav {
-    border-radius: 0 0 8px 8px;
+  .info-container {
+    padding: 0 0.5rem !important;
   }
+
+  .info-container #web-title {
+    font-size: calc(2rem + 1vw) !important;
+    margin-top: 3vh !important;
+  }
+
+  .map-container {
+    max-width: 100% !important;
+    height: 250px !important;
+    margin: 1.5rem 0 !important;
+  }
+
+  .statistics,
+  .risk-of-pollution {
+    padding: 1rem 0.8rem !important;
+    margin: 0.8rem 0 !important;
+  }
+
+  .statistics .title,
+  .risk-of-pollution .title {
+    font-size: calc(1.4rem + 1vw) !important;
+  }
+
+  .statistics .aqi-value,
+  .risk-of-pollution .aqi-value {
+    font-size: calc(2.5rem + 1vw) !important;
+  }
+
+  .statistics .aqi-text,
+  .risk-of-pollution .aqi-text {
+    font-size: 1.4rem !important;
+  }
+
   nav ul.nav-list {
-    padding: 0.5rem 0.5rem;
-    li {
-      font-size: 1rem !important;
-      gap: 1rem !important;
-    }
+    padding: 0.8rem !important;
   }
-  main {
-    gap: 1rem;
-    .map {
-      height: 200px;
-      border-radius: 8px;
-    }
-    .info-container {
-      font-size: 1rem;
-      #web-title {
-        font-size: 1.4rem;
-      }
-    }
+
+  nav ul.nav-list li {
+    font-size: 1.2rem !important;
+    gap: 0.8rem !important;
   }
-  section.forecast {
-    h2.section-title {
-      font-size: 1.4rem;
-      margin-top: 2vh;
-    }
-    ul.cards-container {
-      gap: 1rem;
-      li {
-        border-radius: 8px;
-        p.desc {
-          font-size: 1rem;
-          span.value {
-            font-size: 1.4rem;
-          }
-          span.amplitude {
-            font-size: 1rem;
-          }
-        }
-      }
-    }
+
+  .btn-warning {
+    font-size: 1.4rem !important;
+    padding: 0.5rem 1rem !important;
+  }
+
+  .learn-more {
+    font-size: 1.4rem !important;
+    padding: 0.5rem 1rem !important;
   }
 }

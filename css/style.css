@@ -85,3 +85,6 @@ body {
 .toggle-chatbot {
   font-size: 1.6rem;
 }
+.hidden {
+  display: none !important;
+}

@@ -1,0 +1,27 @@
+@keyframes fadeInTop {
+  0% {
+    transform: translateX(-50%);
+    scale: 0.5;
+    opacity: 0;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+section.forecast h2.section-title,
+section.forecast ul li {
+  animation: fadeInTop ease;
+  animation-timeline: view();
+  animation-range: entry 0;
+}
+@keyframes scaleOut {
+  0%,
+  100% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Windy App</title>
+    <title>AtmosGuard App</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -20,32 +20,50 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/animation.css" />
     <link rel="stylesheet" href="./css/index.css" />
   </head>
-
   <body class="container-fluid d-flex flex-column">
     <header>
       <!-- place navbar here -->
 
-      <nav class="nav w-100 py-2 px-5 container-fluid position-fixed py-3">
+      <nav
+        class="nav w-100 py-5 px-5 container-fluid position-fixed py-3 animate__animated animate__backInDown"
+      >
         <ul
-          class="nav-list d-flex flex-row align-items-center justify-content-space-between my-2"
+          class="nav-list d-flex flex-row align-items-center justify-content-space-around my-2"
         >
           <li class="nav-items d-flex flex-row align-items-center gap-3">
-            <a href="#!" class="bare link">Air Quality</a>
-            <a href="#!" class="bare link">Discover</a>
-          </li>
-          <li class="nav-items d-flex flex-row align-items-center gap-3">
-            <div class="logo"></div>
+            <a href="#!" class="bare-link">Air Quality</a>
+            <a href="#!" class="bare-link">Discover</a>
           </li>
           <li
-            class="nav-items d-flex flex-row align-items-center gap-3 mx-3 position-absolute end-0"
+            class="nav-items d-flex flex-row align-items-center gap-3 mx-3 logo-container position-relative no-after"
           >
-            <a href="#!" class="action-btn btn"> About </a
+            <img src="./img/logo.png" alt="#!" id="logo" />
+            <div class="search-bar position-absolute">
+              <img
+                src="./img/search.svg"
+                alt=""
+                class="mx-2 toggle-search-bar"
+              />
+              <input
+                type="text"
+                placeholder="Find your city in US"
+                class="search-input"
+              />
+            </div>
+          </li>
+          <li class="nav-items d-flex flex-row align-items-center gap-3 mx-3">
+            <a href="#!" class="action-btn btn bare-link"> About </a
             ><a
               href="#!"
-              class="action-btn btn btn-light px-5 py-2 rounded-pill"
+              class="action-btn btn btn-light px-3 py-2 rounded-pill"
               >Get started</a
             >
           </li>
@@ -55,31 +73,26 @@
       <script>
         window.addEventListener("scroll", function () {
           const nav = document.querySelector("nav");
-          const lis = document.querySelectorAll("nav li");
           if (window.scrollY !== 0) {
             nav.style.background = "var(--glass)";
-            lis.forEach((li) => {
-              li.classList.add("dark-text");
-            });
           } else {
             nav.style.background = "";
-            lis.forEach((li) => {
-              li.classList.remove("dark-text");
-            });
           }
         });
       </script>
     </header>
     <main
-      class="d-flex flex-row align-items-center justify-content-space-around gap-5 py-5"
+      class="d-flex flex-row align-items-center justify-content-space-around gap-5 py-5 my-5"
     >
-      <div class="info-container d-flex flex-column mx-5">
+      <div
+        class="info-container d-flex flex-column mx-5 animate__animated animate__bounceInLeft"
+      >
         <h1 id="web-title">Air Quality <span class="grey">Index</span></h1>
 
         <div class="local d-flex flex-column">
           <span class="date-time">01/01/2025 00:00</span>
           <span class="location"
-            >New York, NY <i class="bi bi-arrow-right"></i>
+            >New York <i class="bi bi-arrow-right"></i>
             <span class="country"><i class="bi bi-us"></i> USA</span>
           </span>
         </div>
@@ -123,22 +136,20 @@
             </button>
           </div>
         </div>
-
-        <!-- Map container moved inside info-container -->
-        <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52135129.17428948!2d-119.8093025!3d44.24236485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2zSG9hIEvhu7M!5e1!3m2!1svi!2s!4v1758853300760!5m2!1svi!2s"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            class="map"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
+      </div>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52135129.17428948!2d-119.8093025!3d44.24236485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2zSG9hIEvhu7M!5e1!3m2!1svi!2s!4v1758853300760!5m2!1svi!2s"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          class="map"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </main>
 
-    <section class="forecast py-4 px-2 d-flex flex-row py-5 w-100">
+    <section class="forecast py-4 px-2 d-flex flex-row py-5 w-100 mt-5">
       <div class="info-container mx-5 w-100">
         <h2 class="section-title">
           Next 4 Days <span class="grey">Forecast</span>
@@ -148,7 +159,11 @@
           class="cards-container d-flex flex-row px-5 py-2 mt-5 align-items-center w-100 h-50 rounded-5"
         >
           <li class="card h-100 rounded-4 w-25 d-flex flex-column mx-5">
-            <img src="#" alt="#" class="illustrate h-50 w-100" />
+            <img
+              src="./img/forecast/good.svg"
+              alt="#"
+              class="illustrate h-50 w-100"
+            />
             <p
               class="desc mx-auto d-flex flex-column justify-content-space-around"
             >
@@ -158,7 +173,11 @@
             </p>
           </li>
           <li class="card h-100 rounded-4 w-25 d-flex flex-column mx-5">
-            <img src="#" alt="#" class="illustrate h-50 w-100" />
+            <img
+              src="./img/forecast/good.svg"
+              alt="#"
+              class="illustrate h-50 w-100"
+            />
             <p
               class="desc mx-auto d-flex flex-column justify-content-space-around"
             >
@@ -168,7 +187,11 @@
             </p>
           </li>
           <li class="card h-100 rounded-4 w-25 d-flex flex-column mx-5">
-            <img src="#" alt="#" class="illustrate h-50 w-100" />
+            <img
+              src="./img/forecast/good.svg"
+              alt="#"
+              class="illustrate h-50 w-100"
+            />
             <p
               class="desc mx-auto d-flex flex-column justify-content-space-around"
             >
@@ -178,7 +201,11 @@
             </p>
           </li>
           <li class="card h-100 rounded-4 w-25 d-flex flex-column mx-5">
-            <img src="#" alt="#" class="illustrate h-50 w-100" />
+            <img
+              src="./img/forecast/good.svg"
+              alt="#"
+              class="illustrate h-50 w-100"
+            />
             <p
               class="desc mx-auto d-flex flex-column justify-content-space-around"
             >
@@ -208,7 +235,7 @@
           type="button"
           class="btn-close"
           aria-label="Close"
-          onclick="document.getElementById('chatbot').style.display='none';"
+          onclick="document.getElementById('chatbot').classList.add('hidden')"
         ></button>
       </div>
       <div class="chatbot-body p-3" style="overflow-y: auto; height: 300px">
@@ -228,12 +255,13 @@
         <button type="submit" class="btn btn-primary">Send</button>
       </form>
     </div>
-    <style></style>
+
     <footer>
       <!-- place footer here -->
     </footer>
 
     <script src="./js/main.js" type="module"></script>
+    <script type="module" src="./js/location-time-date.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
