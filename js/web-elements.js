@@ -16,6 +16,14 @@ document.addEventListener("click", function (event) {
   if (chatbot.style.display === "block" && !chatbot.contains(event.target)) {
     chatbot.style.display = "none";
   }
+  const searchBar = document.querySelector(".search-bar");
+  if (
+    searchBar.classList.contains("active") &&
+    !searchBar.contains(event.target) &&
+    event.target !== logo
+  ) {
+    searchBar.classList.remove("active");
+  }
 });
 
 // animation

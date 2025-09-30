@@ -10,12 +10,14 @@ if (userSession && now < userSession.expiry) {
   console.log("User is logged in:", userSession);
 
   if (userBtnEle) {
-    userBtnEle.textContent = `Hi, ${userSession.username}`;
+    userBtnEle.textContent = `Hi, ${userSession.username.split("@")[0]}`;
   }
 
   const userMenu = `
-    <div class="hidden user-menu position-fixed bg-light border rounded-3 shadow p-3" style="top: 100%; right: 5%;color:var(--primary-color)">
-        <p class="mb-2"><strong>${userSession.username}</strong></p>
+    <div class="hidden user-menu position-fixed bg-light border rounded-3 shadow p-3" style="top: 90%; right: 7%;color:var(--primary-color)">
+        <p class="mb-2">Username: <strong>${
+          userSession.username.split("@")[0]
+        }</strong></p>
         <button id="logout-btn" class="btn btn-danger w-100 fs-16" onclick="handleLogout()">Logout</button>
     </div>
   `;
