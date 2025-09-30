@@ -211,6 +211,9 @@ section.forecast {
           font-size: 2.2rem;
           color: var(--contrast-color);
         }
+        span.date {
+          color: var(--white);
+        }
       }
     }
   }
