@@ -45,7 +45,7 @@ signupForm.addEventListener("submit", (e) => {
       addDoc(collection(db, "users"), userData)
         .then(() => {
           alert("Registration successful");
-          window.location.href = "/login.html"; // Redirect to login page after successful registration
+          window.location.href = "./login.html"; // Redirect to login page after successful registration
         })
         .catch((error) => {
           alert("Registration failed: " + error.message);

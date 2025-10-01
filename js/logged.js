@@ -40,8 +40,8 @@ if (userSession && now < userSession.expiry) {
 
   const userMenu = `
     <div class="hidden user-menu position-fixed bg-light border rounded-3 shadow p-3" style="top: 100%; right: 5%;color:var(--primary-color)">
-        <a href="login.html" class="btn btn-primary w-100 fs-16 mb-2">Login</a>
-        <a href="register.html" class="btn btn-success w-100 fs-16">Register</a>
+        <a href="./login.html" class="btn btn-primary w-100 fs-16 mb-2">Login</a>
+        <a href="./signin.html" class="btn btn-success w-100 fs-16">Register</a>
     </div>
   `;
   userBtnEle.addEventListener("click", () => {
