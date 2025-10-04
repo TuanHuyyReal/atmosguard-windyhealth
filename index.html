@@ -27,11 +27,48 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/animation.css" />
     <link rel="stylesheet" href="./css/index.css" />
+    <script src="./js/app.js"></script>
   </head>
+
   <body class="container-fluid d-flex flex-column">
     <header>
       <!-- place navbar here -->
 
+      <nav
+        class="nav w-100 py-5 px-5 container-fluid position-fixed py-3 animate__animated animate__backInDown"
+      >
+        <ul
+          class="nav-list d-flex flex-row align-items-center justify-content-space-around my-2"
+        >
+          <li class="nav-items d-flex flex-row align-items-center gap-3">
+            <a href="#!" class="bare-link">Air Quality</a>
+            <a href="#!" class="bare-link">Discover</a>
+          </li>
+          <li
+            class="nav-items d-flex flex-row align-items-center gap-3 mx-3 logo-container position-relative no-after"
+          >
+            <img src="./img/logo.png" alt="#!" id="logo" />
+            <form id="navbar-search-form" class="search-bar position-absolute">
+              <button type="submit" class="mx-2 navbar-search-submit">
+                <i class="bi bi-search"></i>
+              </button>
+              <input
+                type="text"
+                placeholder="Find your city in US"
+                class="navbar-search-input"
+              />
+            </form>
+          </li>
+          <li class="nav-items d-flex flex-row align-items-center gap-3 mx-3">
+            <a href="#!" class="action-btn btn bare-link"> About </a
+            ><a
+              href="#!"
+              class="action-btn btn btn-light px-3 py-2 rounded-pill"
+              >Get started</a
+            >
+          </li>
+        </ul>
+      </nav>
       <nav
         class="nav w-100 py-5 px-5 container-fluid position-fixed py-3 animate__animated animate__backInDown"
       >
@@ -110,14 +147,98 @@
         <!-- statistics -->
 
         <div
-          class="statistics d-flex flex-column justify-content-center rounded-4"
+          class="statistics d-flex flex-column justify-content-center rounded-4 position-relative"
         >
           <h2 class="title">Main Statistics</h2>
           <span class="aqi-text-title aqi grey small">AQI</span>
-          <span class="aqi-value aqi">0</span>
+          <form
+            id="city-search-form"
+            class="search-bar position-absolute"
+            style="top: 40px; right: 20px"
+          >
+            <button type="submit" class="mx-2 search-submit">
+              <i class="bi bi-search"></i>
+            </button>
+            <input
+              id="city-input"
+              type="text"
+              placeholder="Find your city in US"
+              class="search-input"
+            />
+          </form>
+          <div id="city-aqi-container">
+            <span
+              id="default-aqi-value"
+              style="font-size: calc(3rem + 1vw); font-weight: 600"
+              >0</span
+            >
+            <!-- AQICN widget will appear here -->
+          </div>
           <span class="aqi-text">
-            <span class="amplitude">Good</span> : PM2.5 - Wind
+            <span class="amplitude">Good</span>
           </span>
+          <!-- Remove old fetchAQI script and add widget scripts below -->
+          <script type="text/javascript" charset="utf-8">
+            (function (w, d, t, f) {
+              w[f] =
+                w[f] ||
+                function (c, k, n) {
+                  (s = w[f]), (k = s["k"] = s["k"] || (k ? "&k=" + k : ""));
+                  s["c"] = c = c instanceof Array ? c : [c];
+                  s["n"] = n = n || 0;
+                  (L = d.createElement(t)), (e = d.getElementsByTagName(t)[0]);
+                  L.async = 1;
+                  L.src =
+                    "//feed.aqicn.org/feed/" +
+                    c[n].city +
+                    "/" +
+                    (c[n].lang || "") +
+                    "/feed.v1.js?n=" +
+                    n +
+                    k;
+                  e.parentNode.insertBefore(L, e);
+                };
+            })(window, document, "script", "_aqiFeed");
+          </script>
+          <script>
+            const form = document.getElementById("city-search-form");
+            const input = document.getElementById("city-input");
+            const containerId = "city-aqi-container";
+
+            function formatCityName(city) {
+              return city.trim().toLowerCase().replace(/\s+/g, "-");
+            }
+
+            function clearPreviousWidget() {
+              const container = document.getElementById(containerId);
+              container.innerHTML = "";
+
+              const scripts = document.querySelectorAll(
+                'script[src*="feed.aqicn.org/feed/"]'
+              );
+              scripts.forEach((script) => script.remove());
+            }
+
+            form.addEventListener("submit", function (e) {
+              e.preventDefault();
+
+              const city = formatCityName(input.value);
+              if (!city) return;
+
+              clearPreviousWidget();
+
+              _aqiFeed({
+                display: "%aqiv",
+                container: containerId,
+                city: city,
+              });
+            });
+
+            document.querySelector(".city-aqi-container div span").style += `
+            font-size: calc(3rem + 1vw);
+            font-weight: 600;
+          `;
+          </script>
         </div>
         <!-- risk -->
         <div
@@ -133,9 +254,11 @@
             class="risk-info d-flex flex-column justify-content-center position-relative"
           >
             <span class="aqi-text-title aqi small">Risk</span>
-            <span class="aqi-value aqi">0%</span>
+            <span class="aqi-value aqi risk-value">0</span>
+
             <span class="aqi-text aqi small">
-              <span class="amplitude">No</span> risk due to weather conditions
+              <span class="amplitude risk-ampl">No</span> risk due to weather
+              conditions
             </span>
             <button
               class="toggle-chatbot learn-more btn btn-warning rounded-pill d-flex flex-row align-items-center gap-3 mt-5 px-5 py-2"

@@ -16,12 +16,14 @@ nav ul.nav-list {
   align-items: center;
   justify-content: space-between !important;
   gap: 2rem;
+
   li {
     width: calc((100% - 60%) / 2);
     font-size: 1.6rem !important;
     gap: 3rem !important;
     transition: all 0.3s linear;
     cursor: pointer;
+
     a {
       color: var(--white);
       text-decoration: none;
@@ -33,6 +35,7 @@ nav ul.nav-list {
     .btn-light {
       color: var(--black);
     }
+
     img#logo {
       width: 20%;
       z-index: 0;
@@ -44,12 +47,14 @@ nav ul.nav-list {
       font-size: 1.6rem;
     }
   }
+
   .logo-container {
     width: 60%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   .dark-text {
     color: var(--primary-color) !important;
   }
@@ -70,10 +75,16 @@ nav ul.nav-list {
   .search-bar.active {
     width: 100%;
   }
-  .search-bar img {
+
+  .search-bar button[type="submit"] {
     position: relative;
-    width: 3rem;
+    font-size: 2.4rem;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: var(--primary-color);
   }
+
   .search-bar input[type="text"] {
     height: 6rem;
     width: 100%;
@@ -85,12 +96,14 @@ nav ul.nav-list {
     padding: 0 1rem;
     position: relative;
   }
+
   .search-bar .remove {
     color: var(--primary-color);
     position: absolute;
     width: 100%;
   }
 }
+
 main {
   display: flex;
   flex-direction: row;
@@ -102,6 +115,7 @@ main {
     color: var(--white);
     font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
+
     #web-title {
       font-size: calc(3.2rem + 1vw);
       margin-top: 10vh;
@@ -131,32 +145,39 @@ main {
         font-size: 1.6rem;
         font-weight: 600;
       }
+
       .learn-more {
         width: 100%;
       }
     }
+
     .risk-of-pollution,
     .statistics {
       .title {
         font-size: calc(1.6rem + 1vw);
         font-weight: 600;
       }
+
       .aqi-value {
         font-size: calc(3rem + 1vw);
         font-weight: 600;
       }
+
       .aqi-text {
         font-weight: 400;
+
         .amplitude {
           color: var(--contrast-color);
         }
       }
+
       .aqi-text-title {
         font-weight: 600;
         color: var(--grey);
       }
     }
   }
+
   .map {
     position: absolute;
     right: 5%;
@@ -254,94 +275,134 @@ section.forecast {
       font-size: 2.8rem;
     }
   }
+
   .container {
     font-size: 1.5rem;
     width: 100%;
     grid-area: container;
-    display: flex;
-    display: grid;
-    grid-template-areas:
-      "intro input"
-      "error error";
-    justify-content: space-evenly;
-    align-items: center;
-    span {
-      grid-area: intro;
-      color: var(--white);
-      font-size: 1.7rem;
-      font-weight: 700;
-    }
-    span.error {
-      grid-area: error;
-      color: red;
-      flex-basis: 100%;
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: 700;
-    }
-    .input-container {
-      grid-area: input;
-      display: flex;
-      gap: 0.5rem;
 
-      input[type="text"] {
-        border-radius: 9px;
-        width: 90%;
-        height: 2.5rem;
-        padding: 2rem;
-        border: var(--primary-color) solid 1px;
-        transition: all 0.3s linear;
-      }
-      input[type="text"]::placeholder {
-        color: var(--white);
-      }
-      input[type="text"]:hover {
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
-      }
-      button {
-        width: 10vw;
-        border-radius: 9px;
-        font-size: 1.5rem;
-      }
-    }
-  }
-  .next-days-info {
-    grid-area: next;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-
-    h1 {
-      color: var(--white);
-      font-weight: 700;
-      font-size: 3rem;
-    }
-    .day {
-      background: transparent;
-      backdrop-filter: blur(9px);
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
-      display: flex;
-      flex-direction: column;
+    ul.cards-container {
+      display: grid;
+      grid-template-areas:
+        "intro input"
+        "error error";
+      justify-content: space-evenly;
       align-items: center;
-      gap: 0.5rem;
-      img {
-        height: 10vw;
-        max-height: 10rem;
-      }
-      .date {
+
+      span {
+        grid-area: intro;
         color: var(--white);
-        font-size: 2rem;
-      }
-      .temp {
-        color: var(--white);
-        font-size: 2rem;
+        font-size: 1.7rem;
         font-weight: 700;
       }
-      .description {
+      span.error {
+        grid-area: error;
+        color: red;
+        flex-basis: 100%;
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+      .input-container {
+        grid-area: input;
+        display: flex;
+        gap: 0.5rem;
+
+        input[type="text"] {
+          border-radius: 9px;
+          width: 90%;
+          height: 2.5rem;
+          padding: 2rem;
+          border: var(--primary-color) solid 1px;
+          transition: all 0.3s linear;
+        }
+        input[type="text"]::placeholder {
+          color: var(--white);
+        }
+        input[type="text"]:hover {
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+        }
+        button {
+          width: 10vw;
+          border-radius: 9px;
+          font-size: 1.5rem;
+        }
+      }
+    }
+    .next-days-info {
+      grid-area: next;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+
+      h1 {
         color: var(--white);
-        font-size: 2rem;
+        font-weight: 700;
+        font-size: 3rem;
+      }
+      .day {
+        background: transparent;
+        backdrop-filter: blur(9px);
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        img {
+          height: 10vw;
+          max-height: 10rem;
+        }
+        .date {
+          color: var(--white);
+          font-size: 2rem;
+        }
+        .temp {
+          color: var(--white);
+          font-size: 2rem;
+          font-weight: 700;
+        }
+        .description {
+          color: var(--white);
+          font-size: 2rem;
+          justify-content: center;
+          gap: 3rem;
+          flex-wrap: wrap;
+        }
+      }
+    }
+
+    li {
+      flex-wrap: wrap;
+      flex-basis: 300px;
+      flex-shrink: 600px;
+
+      background: var(--secondary-color);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+
+      p.desc {
+        width: 90%;
+        font-family: "Poppins", sans-serif;
+
+        span.value {
+          color: var(--white);
+          font-size: calc(3rem + 1vw);
+          font-weight: 600;
+        }
+
+        span.date {
+          color: var(--white);
+        }
+
+        span.amplitude {
+          font-weight: 400;
+          font-size: 2.2rem;
+          color: var(--contrast-color);
+        }
       }
     }
   }
@@ -361,10 +422,12 @@ section.forecast {
       padding: 0.5rem 1rem !important;
       width: max-content !important;
     }
+
     img {
       width: 50%;
     }
   }
+
   /* main {
     align-items: center !important;
     justify-content: center !important;
@@ -402,6 +465,7 @@ section.forecast {
     width: 100% !important;
     height: 100% !important;
   }
+
   nav ul.nav-list {
     padding: 1rem !important;
     flex-direction: column !important;
@@ -485,4 +549,9 @@ section.forecast {
     font-size: 1.4rem !important;
     padding: 0.5rem 1rem !important;
   }
+}
+
+#city-aqi-container span {
+  font-size: calc(3rem + 1vw);
+  font-weight: 600;
 }

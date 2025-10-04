@@ -12,6 +12,7 @@ async function fetchBotResponse(userInput) {
           thinkingBudget: 0, // Disables thinking
         },
       },
+      maxOutputTokens: 400,
     });
     return response.text;
   } catch (error) {
@@ -57,3 +58,23 @@ document.querySelectorAll(".toggle-chatbot").forEach((toggle) => {
 });
 // Initialize chatbot as hidden
 document.getElementById("chatbot").classList.add("hidden");
+
+// search bar
+const logo = document.getElementById("logo");
+const search_bar = document.querySelector(".search-bar");
+logo.addEventListener("click", function () {
+  search_bar.classList.toggle("active");
+});
+document.querySelectorAll(".toggle-search-bar").forEach((button) => {
+  button.addEventListener("click", function () {
+    search_bar.classList.remove("active");
+  });
+});
+
+// close chatbot when clicking outside
+document.addEventListener("click", function (event) {
+  const chatbot = document.getElementById("chatbot");
+  if (chatbot.style.display === "block" && !chatbot.contains(event.target)) {
+    chatbot.style.display = "none";
+  }
+});
