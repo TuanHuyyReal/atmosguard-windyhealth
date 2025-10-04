@@ -75,7 +75,7 @@ async function getWeatherNextDays(lat, lon, WEATHER_API_KEY) {
 
 async function getGeoLocation(city, WEATHER_API_KEY) {
   fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${WEATHER_API_KEY}`
+    `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${WEATHER_API_KEY}`
   )
     .then((res) => res.json())
     .then((data) => {
