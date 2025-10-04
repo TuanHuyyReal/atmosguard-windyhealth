@@ -173,10 +173,13 @@
             >
             <!-- AQICN widget will appear here -->
           </div>
-          <span class="aqi-text">
-            <span class="amplitude">Good</span>
-          </span>
-          <!-- Remove old fetchAQI script and add widget scripts below -->
+          <button
+            class="btn btn-warning w-100 fw-500 rounded-pill fs-4 px-5 py-2"
+            onmouseover='_aqiFeed.show("aqi-popup-0");_aqiFeed.adjustTooltipPosition("aqi-popup-0");'
+            onmouseleave="_aqiFeed.hide('aqi-popup-0')"
+          >
+            Learn more
+          </button>
           <script type="text/javascript" charset="utf-8">
             (function (w, d, t, f) {
               w[f] =
@@ -232,11 +235,6 @@
                 city: city,
               });
             });
-
-            document.querySelector(".city-aqi-container div span").style += `
-            font-size: calc(3rem + 1vw);
-            font-weight: 600;
-          `;
           </script>
         </div>
         <!-- risk -->
