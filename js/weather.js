@@ -84,13 +84,13 @@ async function getGeoLocation(city, WEATHER_API_KEY) {
 }
 
 submitBtn.addEventListener("click", () => {
-  let city_input = document.querySelector("input#city-input").value;
+  let city_input = document.querySelector("input#city-input-two").value;
   getGeoLocation(city_input, WEATHER_API_KEY);
 });
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
-    let city_input = document.querySelector("input#city-input").value;
+    let city_input = document.querySelector("input#city-input-two").value;
     getGeoLocation(city_input, WEATHER_API_KEY);
   }
 });
