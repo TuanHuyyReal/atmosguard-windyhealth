@@ -27,8 +27,9 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/animation.css" />
     <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/about.css" />
   </head>
-  <body class="container-fluid d-flex flex-column">
+  <body class="container-fluid d-flex flex-column h-100 w-100">
     <header>
       <!-- place navbar here -->
 
@@ -68,7 +69,12 @@
             </div>
           </li>
           <li class="nav-items d-flex flex-row align-items-center gap-3 mx-3">
-            <a href="#!" class="action-btn btn bare-link"> About </a
+            <a
+              href="#!"
+              class="action-btn btn bare-link"
+              style="text-decoration: underline"
+            >
+              About </a
             ><button
               class="fw-500 action-btn btn btn-light px-3 py-2 rounded-pill"
             >
@@ -90,100 +96,97 @@
         });
       </script>
     </header>
-    <main
-      class="d-flex flex-row align-items-center justify-content-space-around gap-5 py-5 my-5"
-    >
-      <div
-        class="info-container d-flex flex-column mx-5 animate__animated animate__bounceInLeft"
-      >
-        <h1 id="web-title">Air Quality <span class="grey">Index</span></h1>
-
-        <div class="local d-flex flex-column">
-          <span class="date-time">01/01/2025 00:00</span>
-          <span class="location"
-            >New York <i class="bi bi-arrow-right"></i>
-            <span class="country"><i class="bi bi-us"></i> USA</span>
-          </span>
-        </div>
-
-        <!-- place main content here -->
-        <!-- statistics -->
-
-        <div
-          class="statistics d-flex flex-column justify-content-center rounded-4"
-        >
-          <h2 class="title">Main Statistics</h2>
-          <span class="aqi-text-title aqi grey small">AQI</span>
-          <span class="aqi-value aqi">0</span>
-          <span class="aqi-text">
-            <span class="amplitude">Good</span> : PM2.5 - Wind
-          </span>
-        </div>
-        <!-- risk -->
-        <div
-          class="risk-of-pollution d-flex flex-column justify-content-center rounded-4"
-        >
-          <div class="title-container d-flex flex-row align-items-center gap-3">
-            <h2 class="title">Risk of Pollution</h2>
-            <a href="#!" class="btn btn-warning px-5 py-2 rounded-pill"
-              >Details</a
-            >
-          </div>
+    <main>
+      <!-- hero -->
+      <section class="hero">
+        <h1 id="about-title" class="animate__animated animate__backInLeft">
+          ABOUT <br />US
+        </h1>
+        <div class="properties">
           <div
-            class="risk-info d-flex flex-column justify-content-center position-relative"
+            class="text content-wrapper d-flex flex-column justify-content-space-between animate__animated animate__backInLeft"
           >
-            <span class="aqi-text-title aqi small">Risk</span>
-            <span class="aqi-value aqi">0%</span>
-            <span class="aqi-text aqi small">
-              <span class="amplitude">No</span> risk due to weather conditions
-            </span>
-            <button
-              class="toggle-chatbot learn-more btn btn-warning rounded-pill d-flex flex-row align-items-center gap-3 mt-5 px-5 py-2"
-            >
-              <i class="bi bi-robot"></i>
-              <span class="text">Learn more</span>
-            </button>
+            <span class="content fw-bold">Take Care Of Your Atmosphere</span>
+            <p class="content p">
+              <strong>Infinite Dedication:</strong> AtmosGuard featuring an
+              application that allows users to observe their local air quality.
+              Users are also able to ask Windy Chatbot about everything,
+              especially about air quality and it's solution
+            </p>
           </div>
-        </div>
-      </div>
-      <div class="map-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52135129.17428948!2d-119.8093025!3d44.24236485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2zSG9hIEvhu7M!5e1!3m2!1svi!2s!4v1758853300760!5m2!1svi!2s"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          class="map"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
-    </main>
-
-    <section class="forecast py-4 px-2 d-flex flex-row py-5 w-100 mt-5">
-      <div class="grid weather-forecast">
-        <div class="today-info"></div>
-        <hr class="hr1" />
-        <div class="flex container">
-          <span class="introduction" id="errorMess">
-            Enter your city name to get the weather forecast
-          </span>
-
-          <div class="flex input-container">
-            <input
-              type="text"
-              name="city"
-              id="city-input"
-              placeholder="Enter your city"
+          <div class="hero-img-container animate__animated animate__backInUp">
+            <img
+              src="https://atmosphere.copernicus.eu/sites/default/files/styles/hero_image_extra_large/public/2020-09/smog.jpg.webp?itok=20hVzp9C"
+              alt="source: www.atmosphere.copernicus.eu/air-quality"
             />
-            <button type="button" class="btn btn-primary" id="submit">
-              Submit
-            </button>
           </div>
-          <span class="error">Cannot find your city. Please try again.</span>
+          <div class="half-img-text animate__animated animate__backInRight">
+            <img
+              src="./img/nasa-logo.png"
+              alt="source: https://www.cleanpng.com/png-logo-nasa-insignia-design-graphics-6201000/download-png.html"
+              class="rounded-3"
+            />
+            <strong class="content">Our Philosophy</strong>
+            <p class="content p">
+              We are committed to providing our users with the best possible
+              experience and services in the field of air quality.
+            </p>
+          </div>
         </div>
-        <hr class="hr2" />
-        <div class="next-days-info"></div>
-      </div>
-    </section>
+      </section>
+      <section class="services">
+        <div class="visual-content">
+          <h2 id="services-title">Our Services</h2>
+          <p class="p content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab odit
+            consequuntur molestias laborum placeat et nobis voluptates cumque?
+            Facilis veniam unde neque quas eum ratione quo pariatur quasi.
+            Recusandae, architecto.
+          </p>
+          <img src="img/demo.png" alt="" class="h-100 rounded-5" />
+        </div>
+        <ul
+          class="service-list w-50 h-100 d-flex flex-column justify-content-space-between"
+        >
+          <li class="service-container">
+            <h3 class="service-name">Realtime AQI Monitoring</h3>
+            <p class="service-desc">
+              AtmosGuard provides up-to-the-minute data on air quality across
+              U.S. cities. Users can see the current Air Quality Index (AQI) and
+              understand whether the air is safe to breathe, with pollutants
+              like PM2.5 clearly identified.
+            </p>
+          </li>
+
+          <li class="service-container">
+            <h3 class="service-name">4-Day Air Quality Forecast</h3>
+            <p class="service-desc">
+              The app offers a forecast of air quality for the next four days,
+              helping users anticipate changes and plan outdoor activities
+              accordingly. This feature is especially useful for sensitive
+              groups like children, the elderly, or those with respiratory
+              conditions.
+            </p>
+          </li>
+          <li class="service-container">
+            <h3 class="service-name">Pollution Risk Assessment</h3>
+            <p class="service-desc">
+              AtmosGuard evaluates the likelihood of pollution based on weather
+              conditions. It presents this as a percentage risk, making it easy
+              to understand whether the environment poses any health concerns at
+              a given time.
+            </p>
+          </li>
+          <li class="service-container">
+            <h3 class="service-name">Use Of A.I.</h3>
+            <p class="service-desc">
+              The intergrated chatbot allows users to learn more about air
+              quality index and the impact of a polluted atmosphere
+            </p>
+          </li>
+        </ul>
+      </section>
+    </main>
     <button
       class="toggle-chatbot btn btn-warning px-3 py-3 mx-5 my-5 position-fixed bottom-0 end-0 rounded-circle"
     >
@@ -242,7 +245,7 @@
       <h2 id="footer-title">CONTACT <i class="bi bi-wind"></i> US</h2>
 
       <div class="credit d-flex justify-content-between">
-        <p>Data: <span>NASA and AQICN, WAQI, OpenWeatherAPI</span></p>
+        <p>Data: <span>NASA and AQICN, WAQI</span></p>
         <p>Code: <span>AtmosGuard</span></p>
         <p>Design: <span>AtmosGuard</span></p>
         <p>Photographs: <span>NASA, Google, Copernicus, LHBS</span></p>
@@ -253,7 +256,6 @@
     <script src="./js/web-elements.js" type="module"></script>
     <script type="module" src="./js/location-time-date.js"></script>
     <script src="./js/logged.js"></script>
-    <script src="./js/weather.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
