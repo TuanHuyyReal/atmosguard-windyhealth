@@ -16,12 +16,14 @@ nav ul.nav-list {
   align-items: center;
   justify-content: space-between !important;
   gap: 2rem;
+
   li {
     width: calc((100% - 60%) / 2);
     font-size: 1.6rem !important;
     gap: 3rem !important;
     transition: all 0.3s linear;
     cursor: pointer;
+
     a {
       color: var(--white);
       text-decoration: none;
@@ -33,6 +35,7 @@ nav ul.nav-list {
     .btn-light {
       color: var(--black);
     }
+
     img#logo {
       width: 20%;
       z-index: 0;
@@ -43,12 +46,14 @@ nav ul.nav-list {
       padding: 0.5rem 2rem !important;
     }
   }
+
   .logo-container {
     width: 60%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   .dark-text {
     color: var(--primary-color) !important;
   }
@@ -69,10 +74,16 @@ nav ul.nav-list {
   .search-bar.active {
     width: 100%;
   }
-  .search-bar img {
+
+  .search-bar button[type="submit"] {
     position: relative;
-    width: 3rem;
+    font-size: 2.4rem;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: var(--primary-color);
   }
+
   .search-bar input[type="text"] {
     height: 6rem;
     width: 100%;
@@ -84,12 +95,14 @@ nav ul.nav-list {
     padding: 0 1rem;
     position: relative;
   }
+
   .search-bar .remove {
     color: var(--primary-color);
     position: absolute;
     width: 100%;
   }
 }
+
 main {
   display: flex;
   flex-direction: row;
@@ -101,6 +114,7 @@ main {
     color: var(--white);
     font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
+
     #web-title {
       font-size: calc(3.2rem + 1vw);
       margin-top: 10vh;
@@ -130,32 +144,39 @@ main {
         font-size: 1.6rem;
         font-weight: 600;
       }
+
       .learn-more {
         width: 100%;
       }
     }
+
     .risk-of-pollution,
     .statistics {
       .title {
         font-size: calc(1.6rem + 1vw);
         font-weight: 600;
       }
+
       .aqi-value {
         font-size: calc(3rem + 1vw);
         font-weight: 600;
       }
+
       .aqi-text {
         font-weight: 400;
+
         .amplitude {
           color: var(--contrast-color);
         }
       }
+
       .aqi-text-title {
         font-weight: 600;
         color: var(--grey);
       }
     }
   }
+
   .map {
     position: absolute;
     right: 5%;
@@ -182,12 +203,14 @@ section.forecast {
       color: var(--grey);
     }
   }
+
   ul.cards-container {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 3rem;
     flex-wrap: wrap;
+
     li {
       flex-wrap: wrap;
       flex-basis: 300px;
@@ -198,14 +221,21 @@ section.forecast {
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(15px);
       -webkit-backdrop-filter: blur(15px);
+
       p.desc {
         width: 90%;
         font-family: "Poppins", sans-serif;
+
         span.value {
           color: var(--white);
           font-size: calc(3rem + 1vw);
           font-weight: 600;
         }
+
+        span.date {
+          color: var(--white);
+        }
+
         span.amplitude {
           font-weight: 400;
           font-size: 2.2rem;
@@ -230,10 +260,12 @@ section.forecast {
       padding: 0.5rem 1rem !important;
       width: max-content !important;
     }
+
     img {
       width: 50%;
     }
   }
+
   /* main {
     align-items: center !important;
     justify-content: center !important;
@@ -271,6 +303,7 @@ section.forecast {
     width: 100% !important;
     height: 100% !important;
   }
+
   nav ul.nav-list {
     padding: 1rem !important;
     flex-direction: column !important;
@@ -354,4 +387,9 @@ section.forecast {
     font-size: 1.4rem !important;
     padding: 0.5rem 1rem !important;
   }
+}
+
+#city-aqi-container span {
+  font-size: calc(3rem + 1vw);
+  font-weight: 600;
 }

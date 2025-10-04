@@ -1,278 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>AtmosGuard App</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/animation.css" />
-    <link rel="stylesheet" href="./css/index.css" />
-  </head>
-  <body class="container-fluid d-flex flex-column">
-    <header>
-      <!-- place navbar here -->
+<head>
+  <title>AtmosGuard App</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-      <nav
-        class="nav w-100 py-5 px-5 container-fluid position-fixed py-3 animate__animated animate__backInDown"
-      >
-        <ul
-          class="nav-list d-flex flex-row align-items-center justify-content-space-around my-2"
-        >
-          <li class="nav-items d-flex flex-row align-items-center gap-3">
-            <a href="#!" class="bare-link">Air Quality</a>
-            <a href="#!" class="bare-link">Discover</a>
-          </li>
-          <li
-            class="nav-items d-flex flex-row align-items-center gap-3 mx-3 logo-container position-relative no-after"
-          >
-            <img src="./img/logo.png" alt="#!" id="logo" />
-            <div class="search-bar position-absolute">
-              <img
-                src="./img/search.svg"
-                alt=""
-                class="mx-2 toggle-search-bar"
-              />
-              <input
-                type="text"
-                placeholder="Find your city in US"
-                class="search-input"
-              />
-            </div>
-          </li>
-          <li class="nav-items d-flex flex-row align-items-center gap-3 mx-3">
-            <a href="#!" class="action-btn btn bare-link"> About </a
-            ><a
-              href="#!"
-              class="action-btn btn btn-light px-3 py-2 rounded-pill"
-              >Get started</a
-            >
-          </li>
-        </ul>
-      </nav>
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/animation.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <script src="./js/app.js"></script>
+</head>
 
-      <script>
-        window.addEventListener("scroll", function () {
-          const nav = document.querySelector("nav");
-          if (window.scrollY !== 0) {
-            nav.style.background = "var(--glass)";
-          } else {
-            nav.style.background = "";
+<body class="container-fluid d-flex flex-column">
+  <header>
+    <!-- place navbar here -->
+
+    <nav class="nav w-100 py-5 px-5 container-fluid position-fixed py-3 animate__animated animate__backInDown">
+      <ul class="nav-list d-flex flex-row align-items-center justify-content-space-around my-2">
+        <li class="nav-items d-flex flex-row align-items-center gap-3">
+          <a href="#!" class="bare-link">Air Quality</a>
+          <a href="#!" class="bare-link">Discover</a>
+        </li>
+        <li class="nav-items d-flex flex-row align-items-center gap-3 mx-3 logo-container position-relative no-after">
+          <img src="./img/logo.png" alt="#!" id="logo" />
+          <form id="navbar-search-form" class="search-bar position-absolute">
+            <button type="submit" class="mx-2 navbar-search-submit"><i class="bi bi-search"></i></button>
+            <input type="text" placeholder="Find your city in US" class="navbar-search-input" />
+          </form>
+        </li>
+        <li class="nav-items d-flex flex-row align-items-center gap-3 mx-3">
+          <a href="#!" class="action-btn btn bare-link"> About </a><a href="#!"
+            class="action-btn btn btn-light px-3 py-2 rounded-pill">Get started</a>
+        </li>
+      </ul>
+    </nav>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        const nav = document.querySelector("nav");
+        if (window.scrollY !== 0) {
+          nav.style.background = "var(--glass)";
+        } else {
+          nav.style.background = "";
+        }
+      });
+    </script>
+  </header>
+  <main class="d-flex flex-row align-items-center justify-content-space-around gap-5 py-5 my-5">
+    <div class="info-container d-flex flex-column mx-5 animate__animated animate__bounceInLeft">
+      <h1 id="web-title">Air Quality <span class="grey">Index</span></h1>
+
+      <div class="local d-flex flex-column">
+        <span class="date-time">01/01/2025 00:00</span>
+        <span class="location">New York <i class="bi bi-arrow-right"></i>
+          <span class="country"><i class="bi bi-us"></i> USA</span>
+        </span>
+      </div>
+
+      <!-- place main content here -->
+      <!-- statistics -->
+
+      <div class="statistics d-flex flex-column justify-content-center rounded-4 position-relative">
+        <h2 class="title">Main Statistics</h2>
+        <span class="aqi-text-title aqi grey small">AQI</span>
+        <form id="city-search-form" class="search-bar position-absolute" style="top: 40px; right: 20px;">
+          <button type="submit" class="mx-2 search-submit"><i class="bi bi-search"></i></button>
+          <input id="city-input" type="text" placeholder="Find your city in US" class="search-input" />
+        </form>
+        <div id="city-aqi-container">
+          <span id="default-aqi-value" style="font-size:calc(3rem + 1vw); font-weight: 600">0</span>
+          <!-- AQICN widget will appear here -->
+        </div>
+        <span class="aqi-text">
+          <span class="amplitude">Good</span>
+        </span>
+        <!-- Remove old fetchAQI script and add widget scripts below -->
+        <script type="text/javascript" charset="utf-8">
+          (function (w, d, t, f) {
+            w[f] = w[f] || function (c, k, n) {
+              s = w[f], k = s['k'] = (s['k'] || (k ? ('&k=' + k) : '')); s['c'] =
+                c = (c instanceof Array) ? c : [c]; s['n'] = n = n || 0; L = d.createElement(t), e = d.getElementsByTagName(t)[0];
+              L.async = 1; L.src = '//feed.aqicn.org/feed/' + (c[n].city) + '/' + (c[n].lang || '') + '/feed.v1.js?n=' + n + k;
+              e.parentNode.insertBefore(L, e);
+            };
+          })(window, document, 'script', '_aqiFeed');
+        </script>
+        <script>
+          const form = document.getElementById('city-search-form');
+          const input = document.getElementById('city-input');
+          const containerId = 'city-aqi-container';
+
+          function formatCityName(city) {
+            return city.trim().toLowerCase().replace(/\s+/g, '-');
           }
-        });
-      </script>
-    </header>
-    <main
-      class="d-flex flex-row align-items-center justify-content-space-around gap-5 py-5 my-5"
-    >
-      <div
-        class="info-container d-flex flex-column mx-5 animate__animated animate__bounceInLeft"
-      >
-        <h1 id="web-title">Air Quality <span class="grey">Index</span></h1>
 
-        <div class="local d-flex flex-column">
-          <span class="date-time">01/01/2025 00:00</span>
-          <span class="location"
-            >New York <i class="bi bi-arrow-right"></i>
-            <span class="country"><i class="bi bi-us"></i> USA</span>
+          function clearPreviousWidget() {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+
+            const scripts = document.querySelectorAll('script[src*="feed.aqicn.org/feed/"]');
+            scripts.forEach(script => script.remove());
+          }
+
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const city = formatCityName(input.value);
+            if (!city) return;
+
+            clearPreviousWidget();
+
+            _aqiFeed({ display: "%aqiv", container: containerId, city: city });
+          });
+
+          document.querySelector('.city-aqi-container div span').style += `
+            font-size: calc(3rem + 1vw);
+            font-weight: 600;
+          `;
+        </script>
+      </div>
+      <!-- risk -->
+      <div class="risk-of-pollution d-flex flex-column justify-content-center rounded-4">
+        <div class="title-container d-flex flex-row align-items-center gap-3">
+          <h2 class="title">Risk of Pollution</h2>
+          <a href="#!" class="btn btn-warning px-5 py-2 rounded-pill">Details</a>
+        </div>
+        <div class="risk-info d-flex flex-column justify-content-center position-relative">
+          <span class="aqi-text-title aqi small">Risk</span>
+          <span class="aqi-value aqi risk-value">0</span>
+
+          <span class="aqi-text aqi small">
+            <span class="amplitude risk-ampl">No</span> risk due to weather conditions
           </span>
-        </div>
-
-        <!-- place main content here -->
-        <!-- statistics -->
-
-        <div
-          class="statistics d-flex flex-column justify-content-center rounded-4"
-        >
-          <h2 class="title">Main Statistics</h2>
-          <span class="aqi-text-title aqi grey small">AQI</span>
-          <span class="aqi-value aqi">0</span>
-          <span class="aqi-text">
-            <span class="amplitude">Good</span> : PM2.5 - Wind
-          </span>
-        </div>
-        <!-- risk -->
-        <div
-          class="risk-of-pollution d-flex flex-column justify-content-center rounded-4"
-        >
-          <div class="title-container d-flex flex-row align-items-center gap-3">
-            <h2 class="title">Risk of Pollution</h2>
-            <a href="#!" class="btn btn-warning px-5 py-2 rounded-pill"
-              >Details</a
-            >
-          </div>
-          <div
-            class="risk-info d-flex flex-column justify-content-center position-relative"
-          >
-            <span class="aqi-text-title aqi small">Risk</span>
-            <span class="aqi-value aqi">0%</span>
-            <span class="aqi-text aqi small">
-              <span class="amplitude">No</span> risk due to weather conditions
-            </span>
-            <button
-              class="toggle-chatbot learn-more btn btn-warning rounded-pill d-flex flex-row align-items-center gap-3 mt-5 px-5 py-2"
-            >
-              <i class="bi bi-robot"></i>
-              <span class="text">Learn more</span>
-            </button>
-          </div>
+          <button
+            class="toggle-chatbot learn-more btn btn-warning rounded-pill d-flex flex-row align-items-center gap-3 mt-5 px-5 py-2">
+            <i class="bi bi-robot"></i>
+            <span class="text">Learn more</span>
+          </button>
         </div>
       </div>
-      <div class="map-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52135129.17428948!2d-119.8093025!3d44.24236485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2zSG9hIEvhu7M!5e1!3m2!1svi!2s!4v1758853300760!5m2!1svi!2s"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          class="map"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
-    </main>
-
-    <section class="forecast py-4 px-2 d-flex flex-row py-5 w-100 mt-5">
-      <div class="info-container mx-5 w-100">
-        <h2 class="section-title">
-          Next 4 Days <span class="grey">Forecast</span>
-        </h2>
-
-        <ul
-          class="cards-container d-flex flex-row px-5 py-2 mt-5 align-items-center w-100 h-50 rounded-5"
-        >
-          <li class="card h-100 rounded-4 w-25 d-flex flex-column mx-5">
-            <img
-              src="./img/forecast/good.svg"
-              alt="#"
-              class="illustrate h-50 w-100"
-            />
-            <p
-              class="desc mx-auto d-flex flex-column justify-content-space-around"
-            >
-              <span class="value">0</span>
-              <span class="amplitude">Good</span>
-              <span class="date">02/01/2025 00:00</span>
-            </p>
-          </li>
-          <li class="card h-100 rounded-4 w-25 d-flex flex-column mx-5">
-            <img
-              src="./img/forecast/good.svg"
-              alt="#"
-              class="illustrate h-50 w-100"
-            />
-            <p
-              class="desc mx-auto d-flex flex-column justify-content-space-around"
-            >
-              <span class="value">0</span>
-              <span class="amplitude">Good</span>
-              <span class="date">02/01/2025 00:00</span>
-            </p>
-          </li>
-          <li class="card h-100 rounded-4 w-25 d-flex flex-column mx-5">
-            <img
-              src="./img/forecast/good.svg"
-              alt="#"
-              class="illustrate h-50 w-100"
-            />
-            <p
-              class="desc mx-auto d-flex flex-column justify-content-space-around"
-            >
-              <span class="value">0</span>
-              <span class="amplitude">Good</span>
-              <span class="date">02/01/2025 00:00</span>
-            </p>
-          </li>
-          <li class="card h-100 rounded-4 w-25 d-flex flex-column mx-5">
-            <img
-              src="./img/forecast/good.svg"
-              alt="#"
-              class="illustrate h-50 w-100"
-            />
-            <p
-              class="desc mx-auto d-flex flex-column justify-content-space-around"
-            >
-              <span class="value">0</span>
-              <span class="amplitude">Good</span>
-              <span class="date">02/01/2025 00:00</span>
-            </p>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <button
-      class="toggle-chatbot btn btn-warning px-3 py-3 mx-5 my-5 position-fixed bottom-0 end-0 rounded-circle"
-    >
-      <i class="bi bi-robot"></i>
-    </button>
-    <div
-      id="chatbot"
-      class="chatbot-container position-fixed bottom-0 end-0 m-4 rounded-4 shadow-lg bg-white"
-      style="width: 350px; max-height: 500px; z-index: 1050"
-    >
-      <div
-        class="chatbot-header d-flex align-items-center justify-content-between p-3 border-bottom"
-      >
-        <span class="fw-bold"><i class="bi bi-robot"></i> Windy</span>
-        <button
-          type="button"
-          class="btn-close"
-          aria-label="Close"
-          onclick="document.getElementById('chatbot').classList.add('hidden')"
-        ></button>
-      </div>
-      <div class="chatbot-body p-3" style="overflow-y: auto; height: 300px">
-        <!-- Messages will appear here -->
-        <div class="chatbot-message bot mb-2">
-          <span>Hello! How can I help you today?</span>
-        </div>
-      </div>
-      <form class="chatbot-footer d-flex p-3 border-top">
-        <input
-          type="text"
-          id="chatbot-input"
-          class="form-control me-2"
-          placeholder="Type your message..."
-          autocomplete="off"
-        />
-        <button type="submit" class="btn btn-primary">Send</button>
-      </form>
     </div>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52135129.17428948!2d-119.8093025!3d44.24236485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2zSG9hIEvhu7M!5e1!3m2!1svi!2s!4v1758853300760!5m2!1svi!2s"
+        style="border: 0" allowfullscreen="" loading="lazy" class="map"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </main>
 
-    <footer>
-      <!-- place footer here -->
-    </footer>
+  <section class="forecast py-4 px-2 d-flex flex-row py-5 w-100 mt-5">
+    <div class="info-container mx-5 w-100">
+      <h2 class="section-title">
+        Next 4 Days <span class="grey">Forecast</span>
+      </h2>
 
-    <script src="./js/main.js" type="module"></script>
-    <script type="module" src="./js/location-time-date.js"></script>
-    <!-- Bootstrap JavaScript Libraries -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
+      <ul class="cards-container d-flex flex-row px-5 py-2 mt-5 align-items-center w-100 h-50 rounded-5">
+        <li id="forecast-card-0" class="card h-100 rounded-4 w-25 d-flex flex-column mx-5">
+          <img src="./img/forecast/good.svg" alt="#" class="illustrate h-50 w-100" />
+          <p class="desc mx-auto d-flex flex-column justify-content-space-around">
+            <span class="value">0</span>
+            <span class="amplitude">Good</span>
+            <span class="date">--/--/----</span>
+          </p>
+        </li>
+        <li id="forecast-card-1" class="card h-100 rounded-4 w-25 d-flex flex-column mx-5">
+          <img src="./img/forecast/good.svg" alt="#" class="illustrate h-50 w-100" />
+          <p class="desc mx-auto d-flex flex-column justify-content-space-around">
+            <span class="value">0</span>
+            <span class="amplitude">Good</span>
+            <span class="date">--/--/----</span>
+          </p>
+        </li>
+        <li id="forecast-card-2" class="card h-100 rounded-4 w-25 d-flex flex-column mx-5">
+          <img src="./img/forecast/good.svg" alt="#" class="illustrate h-50 w-100" />
+          <p class="desc mx-auto d-flex flex-column justify-content-space-around">
+            <span class="value">0</span>
+            <span class="amplitude">Good</span>
+            <span class="date">--/--/----</span>
+          </p>
+        </li>
+        <li id="forecast-card-3" class="card h-100 rounded-4 w-25 d-flex flex-column mx-5">
+          <img src="./img/forecast/good.svg" alt="#" class="illustrate h-50 w-100" />
+          <p class="desc mx-auto d-flex flex-column justify-content-space-around">
+            <span class="value">0</span>
+            <span class="amplitude">Good</span>
+            <span class="date">--/--/----</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <button class="toggle-chatbot btn btn-warning px-3 py-3 mx-5 my-5 position-fixed bottom-0 end-0 rounded-circle">
+    <i class="bi bi-robot"></i>
+  </button>
+  <div id="chatbot" class="chatbot-container position-fixed bottom-0 end-0 m-4 rounded-4 shadow-lg bg-white"
+    style="width: 350px; max-height: 500px; z-index: 1050">
+    <div class="chatbot-header d-flex align-items-center justify-content-between p-3 border-bottom">
+      <span class="fw-bold"><i class="bi bi-robot"></i> Windy</span>
+      <button type="button" class="btn-close" aria-label="Close"
+        onclick="document.getElementById('chatbot').classList.add('hidden')"></button>
+    </div>
+    <div class="chatbot-body p-3" style="overflow-y: auto; height: 300px">
+      <!-- Messages will appear here -->
+      <div class="chatbot-message bot mb-2">
+        <span>Hello! How can I help you today?</span>
+      </div>
+    </div>
+    <form class="chatbot-footer d-flex p-3 border-top">
+      <input type="text" id="chatbot-input" class="form-control me-2" placeholder="Type your message..."
+        autocomplete="off" />
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+  </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+
+  <script src="./js/main.js" type="module"></script>
+  <script type="module" src="./js/location-time-date.js"></script>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

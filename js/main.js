@@ -10,8 +10,9 @@ async function fetchBotResponse(userInput) {
       config: {
         thinkingConfig: {
           thinkingBudget: 0, // Disables thinking
-        },
+        }
       },
+      maxOutputTokens: 400,
     });
     return response.text;
   } catch (error) {
@@ -76,14 +77,4 @@ document.addEventListener("click", function (event) {
   if (chatbot.style.display === "block" && !chatbot.contains(event.target)) {
     chatbot.style.display = "none";
   }
-});
-
-// animation
-document.querySelectorAll("a.bare-link").forEach((link) => {
-  link.addEventListener("mouseover", () => {
-    link.style.animation = "scaleOut 0.5s ease-in-out";
-  });
-  link.addEventListener("mouseleave", () => {
-    link.style.animation = "";
-  });
 });
