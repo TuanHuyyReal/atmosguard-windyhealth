@@ -133,11 +133,15 @@ main {
       margin: 2rem 0;
       padding: 2.5rem 1.2rem;
 
-      .btn-warning {
+      .btn-light {
         font-size: 1.6rem;
         font-weight: 600;
 
-        text-align: left;
+        text-align: center;
+      }
+
+      #city-input::placeholder {
+        color: var(--primary-color);
       }
     }
 

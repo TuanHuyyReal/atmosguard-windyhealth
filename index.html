@@ -104,7 +104,7 @@
             </div>
           </li>
           <li class="nav-items d-flex flex-row align-items-center gap-3 mx-3">
-            <a href="#!" class="action-btn btn bare-link"> About </a
+            <a href="./about.html" class="action-btn btn bare-link"> About </a
             ><button
               class="fw-500 action-btn btn btn-light px-3 py-2 rounded-pill"
             >
@@ -136,10 +136,6 @@
 
         <div class="local d-flex flex-column">
           <span class="date-time">01/01/2025 00:00</span>
-          <span class="location"
-            >New York <i class="bi bi-arrow-right"></i>
-            <span class="country"><i class="bi bi-us"></i> USA</span>
-          </span>
         </div>
 
         <!-- place main content here -->
@@ -152,17 +148,16 @@
           <span class="aqi-text-title aqi grey small">AQI</span>
           <form
             id="city-search-form"
-            class="search-bar position-absolute"
-            style="top: 40px; right: 20px"
+            class="search-bar w-100 my-2 px-5 py-2 bg-light d-flex flex-row align-items-center justify-content-between rounded-pill"
           >
-            <button type="submit" class="mx-2 search-submit">
+            <button type="submit" class="mx-2 search-submit btn btn-light">
               <i class="bi bi-search"></i>
             </button>
             <input
               id="city-input"
               type="text"
               placeholder="Find your city in US"
-              class="search-input"
+              class="search-input bg-light border-0"
             />
           </form>
           <div id="city-aqi-container">
@@ -174,11 +169,11 @@
             <!-- AQICN widget will appear here -->
           </div>
           <button
-            class="btn btn-warning w-100 fw-500 rounded-pill fs-4 px-5 py-2"
+            class="btn btn-light w-100 fw-500 rounded-pill fs-4 px-5 py-2 toggle-chatbot"
             onmouseover='_aqiFeed.show("aqi-popup-0");_aqiFeed.adjustTooltipPosition("aqi-popup-0");'
             onmouseleave="_aqiFeed.hide('aqi-popup-0')"
           >
-            Learn more
+            <i class="bi bi-robot"></i> Learn more
           </button>
           <script type="text/javascript" charset="utf-8">
             (function (w, d, t, f) {
@@ -251,7 +246,7 @@
             class="risk-info d-flex flex-column justify-content-center position-relative"
           >
             <span class="aqi-text-title aqi small">Risk</span>
-            <span class="aqi-value aqi risk-value">0</span>
+            <span class="aqi-value aqi risk-value">0%</span>
 
             <span class="aqi-text aqi small">
               <span class="amplitude risk-ampl">No</span> risk due to weather
