@@ -26,12 +26,12 @@ document.addEventListener("click", function (event) {
   }
 });
 
-// animation
-document.querySelectorAll("a.bare-link").forEach((link) => {
-  link.addEventListener("mouseover", () => {
-    link.style.animation = "scaleOut 0.5s ease-in-out";
-  });
-  link.addEventListener("mouseleave", () => {
-    link.style.animation = "";
-  });
-});
+// // animation
+// document.querySelectorAll("a.bare-link").forEach((link) => {
+//   link.addEventListener("mouseover", () => {
+//     link.style.animation = "scaleOut 0.5s ease-in-out";
+//   });
+//   link.addEventListener("mouseleave", () => {
+//     link.style.animation = "";
+//   });
+// });
